@@ -1,0 +1,26 @@
+.new-tweet {
+  display: flex;
+  width: 100%;
+}
+
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.new-tweet textarea {
+  resize: none;
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom-style: solid;
+  padding-bottom: 0.5em;
+}
+
+#new-tweet-btn-count {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+}

@@ -39,17 +39,3 @@ nav {
   flex-direction: row;
   justify-content: center;
 }
-
-.new-tweet {
-  display: flex;
-  width: 100%;
-}
-
-.new-tweet textarea {
-  resize: none;
-}
-
-#new-tweet-btn-count {
-  display: flex;
-  justify-content: space-between;
-}
