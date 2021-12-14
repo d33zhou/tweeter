@@ -19,6 +19,9 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav {
@@ -28,3 +31,11 @@ nav {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.container {
+  display: flex;
+  width: 90%;
+  background-color: #f4f1ec;
+  flex-direction: row;
+  justify-content: center;
+}
