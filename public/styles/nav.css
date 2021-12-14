@@ -1,0 +1,20 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+nav {
+  display: flex;
+  color: #FFFFFF;
+  background-color: #4056A1;
+  height: 120px;
+  padding: 1.5em;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav span {
+  font-family: 'Bungee', sans-serif;
+}
