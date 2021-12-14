@@ -54,7 +54,18 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</main>
+    <main class="container">
+      <section class="new-tweet">
+        <!-- <h2>Compose Tweet</h2> -->
+        <form method="POST" action="/tweets/">
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div id="new-tweet-btn-count">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+    </main>
     
   </body>
 </html>
