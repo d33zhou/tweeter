@@ -8,17 +8,28 @@
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
+  height: 125%;
 }
 
 .new-tweet textarea {
+  font-weight: bold;
   resize: none;
   background-color: #f4f1ec;
   border: none;
   border-bottom-style: solid;
+  border-bottom-width: thick;
   padding-bottom: 0.5em;
 }
 
+.new-tweet button {
+  color: #FFFFFF;
+  background-color: #4056A1;
+  border: none;
+  padding: 0.25em 0.5em;
+}
+
 #new-tweet-btn-count {
+  font-family: 'Bungee', sans-serif;
   display: flex;
   justify-content: space-between;
   padding-top: 0.5em;
