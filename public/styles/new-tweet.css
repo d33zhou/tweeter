@@ -43,3 +43,24 @@
 .new-tweet [sign="positive"] {
   color: #545149;
 }
+
+article.tweet {
+  display: flex;
+  flex-direction: column;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+article.tweet div {
+  display: flex;
+}
+
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

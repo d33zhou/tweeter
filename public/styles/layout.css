@@ -32,10 +32,10 @@ nav {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-.container {
+main.container {
   display: flex;
   width: 90%;
   background-color: #f4f1ec;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }

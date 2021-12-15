@@ -60,7 +60,7 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="container"> <!-- give ID since only 1? -->
       <section class="new-tweet">
         <!-- <h2>Compose Tweet</h2> -->
         <form method="POST" action="/tweets/">
@@ -70,6 +70,25 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <section class="tweets">
+        <article class="tweet">
+          <header>
+            <p>NAME</p>
+            <p>HANDLE</p>
+          </header>
+          <div>
+            <p>content goes here</p>
+          </div>
+          <footer>
+            <p>10 days ago</p>
+            <div class="icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
     
