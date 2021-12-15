@@ -15,6 +15,10 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 #nav-left-block {
