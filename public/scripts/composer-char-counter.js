@@ -8,12 +8,6 @@ $(document).ready(function() {
 
     $('.counter').val(remaining); // should not use the .counter class, use DOM traversal instead
     
-    if (remaining >= 0) {
-      $('.counter').attr("sign", "positive");
-    } else {
-      $('.counter').attr("sign", "negative");
-    }
-
-    // console.log(140 - charCount);
+    $('.counter').attr("sign", remaining >= 0 ? "positive" : "negative");
   });
 });
