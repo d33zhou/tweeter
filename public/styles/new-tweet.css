@@ -50,6 +50,10 @@ article.tweet {
   border: thick solid;
 }
 
+article.tweet:hover {
+  box-shadow: 5px 5px rgb(184, 184, 184);
+}
+
 article.tweet header {
   display: flex;
   flex-direction: row;
@@ -57,7 +61,7 @@ article.tweet header {
   padding: 0em 0.5em;
 }
 
-article.tweet div {
+article.tweet div.content {
   display: flex;
   border-bottom: thick solid;
   padding: 0em 1em;
@@ -75,4 +79,9 @@ div.icons {
   display: flex;
   align-items: center;
   color: #4056A1;
+  font-size: medium;
+}
+
+div.icons i:hover {
+  color: darkgoldenrod;
 }
