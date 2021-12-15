@@ -35,3 +35,11 @@
   padding-top: 0.5em;
   padding-bottom: 1em;
 }
+
+.new-tweet [sign="negative"] {
+  color: red;
+}
+
+.new-tweet [sign="positive"] {
+  color: #545149;
+}
