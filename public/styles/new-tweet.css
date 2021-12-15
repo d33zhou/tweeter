@@ -47,20 +47,32 @@
 article.tweet {
   display: flex;
   flex-direction: column;
+  border: thick solid;
 }
 
 article.tweet header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0em 0.5em;
 }
 
 article.tweet div {
   display: flex;
+  border-bottom: thick solid;
+  padding: 0em 1em;
 }
 
 article.tweet footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: small;
+  padding: 0em 2em;
+}
+
+div.icons {
+  display: flex;
+  align-items: center;
+  color: #4056A1;
 }
