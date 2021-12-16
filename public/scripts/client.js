@@ -10,8 +10,18 @@ $(document).ready(function() {
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
     
-    // submit POST request with serialized data (query string format)
-    $.post("/tweets", $(this).serialize());
+    // data validation for submitted tweet - no empty tweets or >140 char tweets
+    const newTweet = $('#tweet-text').val();
+    if (newTweet === "" || newTweet === null) {
+      alert("Error: You have nothing to Tweet!");
+    } else if (newTweet.length > 140) {
+      alert("Error: You Tweeted too much!");
+    } else {
+      // submit POST request with serialized data (query string format)
+      $.post("/tweets", $(this).serialize());
+      $('#tweet-text').val("").focus();
+      $('.counter').val(140);
+    }
   });
 
   // GET all tweets data from server database and generate tweet cards
