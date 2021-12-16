@@ -18,9 +18,24 @@ $(document).ready(function() {
       alert("Error: You Tweeted too much!");
     } else {
       // submit POST request with serialized data (query string format)
-      $.post("/tweets", $(this).serialize());
+      $.post("/tweets", $(this).serialize())
+        .done(function() {
+          
+          // add the newest tweet card to the top of the tweets container
+          $.get("/tweets", function(data) {
+            const recentTweet = data[data.length - 1];
+            const $newTweet = createTweetElement(recentTweet);
+            $('#tweets-container').prepend($newTweet);
+          });
+        });
+
+      // reformat tweeter text box and counter for next tweet
       $('#tweet-text').val("").focus();
       $('.counter').val(140);
+
+      
+      
+      
     }
   });
 
