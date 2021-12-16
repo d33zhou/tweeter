@@ -62,8 +62,8 @@ const createTweetElement = function(tweet) {
 
 // loop through each tweet data element, to generate each tweet for DOM
 const renderTweets = function(tweets) {
-  for (const tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
+  for (let i = tweets.length - 1; i >= 0; i--) {
+    const $tweet = createTweetElement(tweets[i]);
     $('#tweets-container').append($tweet);
   }
 };
