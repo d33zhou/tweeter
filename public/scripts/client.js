@@ -68,6 +68,23 @@ $(document).ready(function() {
     }
   });
 
+  $(window).scroll(function() {
+    // console.log("scrolled: ", $(this).scrollTop())
+
+    
+  });
+
+  // button click handling to scroll page back up to top
+  $('#btn-scroll-top').click(function() {
+    $('html, body').animate({scrollTop: 0}, 300);
+
+    $('section.new-tweet')
+        .attr("showing", "Y")
+        .slideDown();
+      
+    $('#tweet-text').val("").focus();
+  });
+
   // GET all tweets data from server database and generate tweet cards
   const loadTweets = function() {
     $.get("/tweets", function(data) {

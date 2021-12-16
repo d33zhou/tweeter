@@ -39,3 +39,13 @@ main.container {
   flex-direction: column;
   justify-content: center;
 }
+
+#btn-scroll-top {
+  display: flex;
+  color: white;
+  background-color: red;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+}
