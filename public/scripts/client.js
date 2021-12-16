@@ -7,6 +7,7 @@
 $(document).ready(function() {
 
   $('.error').hide(0);
+  $('#btn-scroll-top').hide(0);
 
   $('section.new-tweet').hide(0, function() {
     $(this).attr("showing", "N");
@@ -68,10 +69,16 @@ $(document).ready(function() {
     }
   });
 
+  // display/hide scroll-to-top button when scrolled down, hide/display nav tweet option
   $(window).scroll(function() {
-    // console.log("scrolled: ", $(this).scrollTop())
 
-    
+    if ($(this).scrollTop() > 50) {
+      $('#btn-scroll-top').fadeIn("fast");
+      $('#nav-right-block').fadeOut("fast");
+    } else {
+      $('#btn-scroll-top').fadeOut("fast");
+      $('#nav-right-block').fadeIn("fast");
+    }
   });
 
   // button click handling to scroll page back up to top

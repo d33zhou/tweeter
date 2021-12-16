@@ -41,6 +41,12 @@ section.new-tweet label.error {
   padding: 0.25em 0.5em;
 }
 
+.new-tweet button:hover {
+  background-color: #596aa0;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 #new-tweet-btn-count {
   font-family: 'Bungee', sans-serif;
   display: flex;
