@@ -8,6 +8,10 @@ $(document).ready(function() {
 
   $('.error').hide(0);
 
+  $('section.new-tweet').hide(0, function() {
+    $(this).attr("showing", "N");
+  });
+
   // handler when new tweets submitted
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
@@ -47,8 +51,21 @@ $(document).ready(function() {
     });
   });
 
+  // display/hide the write tweet form
   $('#nav-right-block span').click(function() {
-    console.log("write tweet clicked");
+    
+    if ($('section.new-tweet').attr("showing") === "N") {
+      $('section.new-tweet')
+        .attr("showing", "Y")
+        .slideDown();
+      
+      $('#tweet-text').val("").focus();
+
+    } else {
+      $('section.new-tweet')
+        .attr("showing", "N")
+        .slideUp();
+    }
   });
 
   // GET all tweets data from server database and generate tweet cards
