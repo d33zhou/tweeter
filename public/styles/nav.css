@@ -34,7 +34,17 @@ nav {
   align-items: center;
 }
 
-.fa-angle-double-down {
-  color: red;
+@keyframes arrow-updown {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(75%);
+  }
 }
 
+.fa-angle-double-down {
+  color: red;
+  animation: arrow-updown 1s ease infinite alternate;
+}
