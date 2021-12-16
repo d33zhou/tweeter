@@ -34,13 +34,17 @@ nav {
   align-items: center;
 }
 
+#nav-right-block span:hover {
+  cursor: pointer;
+}
+
 @keyframes arrow-updown {
   from {
     transform: translateY(0%);
   }
 
   to {
-    transform: translateY(75%);
+    transform: translateY(50%);
   }
 }
 

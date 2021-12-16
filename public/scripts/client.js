@@ -47,6 +47,10 @@ $(document).ready(function() {
     });
   });
 
+  $('#nav-right-block span').click(function() {
+    console.log("write tweet clicked");
+  });
+
   // GET all tweets data from server database and generate tweet cards
   const loadTweets = function() {
     $.get("/tweets", function(data) {
