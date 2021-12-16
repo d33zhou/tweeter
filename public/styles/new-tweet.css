@@ -5,7 +5,7 @@ section.new-tweet {
   flex-direction: column;
 }
 
-section.new-tweet label.error {
+section.new-tweet #error-validation {
   display: flex;
   border: solid medium red;
   color: red;

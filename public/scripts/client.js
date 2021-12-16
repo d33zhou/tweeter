@@ -6,7 +6,7 @@
 
 $(document).ready(function() {
 
-  $('.error').hide(0);
+  $('#error-validation').hide(0);
   $('#btn-scroll-top').hide(0);
 
   $('section.new-tweet').hide(0, function() {
@@ -17,39 +17,50 @@ $(document).ready(function() {
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
 
-    $('.error').slideUp("fast", function() {
+    const currentEvent = this;
 
-      // data validation for submitted tweet - no empty tweets or >140 char tweets
-      const newTweet = $('#tweet-text').val();
-      if (newTweet === "" || newTweet === null) {
-        
-        $('span.error').html("You didn't Tweet anything! Try humming a different tune.");
-        $('.error').slideDown("fast");
+    // to fix async error msg switching
+    $('#error-validation').slideUp("fast"); //, function() {
 
-      } else if (newTweet.length > 140) {
-        
+    // data validation for submitted tweet - no empty tweets or >140 char tweets
+    const newTweet = $('#tweet-text').val();
+
+    if (newTweet === "" || newTweet === null) {
+      
+      $('#error-validation').queue(function() {
+        $('span.error').html("You didn't Tweet anything. Time to get creative!");
+        $('#error-validation').slideDown("fast");  
+        $(this).dequeue();
+      });
+
+    } else if (newTweet.length > 140) {
+      
+      $('#error-validation').queue(function() {
         $('span.error').html("You Tweeted too much! Try humming a shorter tune.");
-        $('.error').slideDown("fast");
+        $('#error-validation').slideDown("fast");
+        $(this).dequeue();
+      });
 
-      } else {
-        // submit POST request with serialized data (query string format)
-        $.post("/tweets", $(this).serialize())
-          .done(function() {
-            
-            // add the newest tweet card to the top of the tweets container
-            $.get("/tweets", function(data) {
-              const recentTweet = data[data.length - 1];
-              const $newTweet = createTweetElement(recentTweet);
-              $('#tweets-container').prepend($newTweet);
-            });
+    } else {
+      
+      // submit POST request with serialized data (query string format)
+      $.post("/tweets", $(currentEvent).serialize())
+        .done(function() {
+          
+          // add the newest tweet card to the top of the tweets container
+          $.get("/tweets", function(data) {
+            const recentTweet = data[data.length - 1];
+            const $newTweet = createTweetElement(recentTweet);
+            $('#tweets-container').prepend($newTweet);
           });
+        });
 
-        // reformat tweeter text box and counter for next tweet
-        $('#tweet-text').val("").focus();
-        $('.counter').val(140);
+      // reformat tweeter text box and counter for next tweet
+      $('#tweet-text').val("").focus();
+      $('.counter').val(140);
 
-      }
-    });
+    }
+    //});
   });
 
   // display/hide the write tweet form
