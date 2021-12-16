@@ -67,7 +67,14 @@
     <main class="container"> <!-- give ID since only 1? -->
       
       <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
+        <!-- validation error message -->
+        <label class="error" for="submit-tweet">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span class="error">test</span>
+          <i class="fas fa-exclamation-triangle"></i>
+        </label>
+
+        <!-- form submission -->
         <form id="submit-tweet" method="POST" action="/tweets/">
           <textarea name="text" id="tweet-text" rows="1" placeholder="What are you humming about?"></textarea>
           <div id="new-tweet-btn-count">
@@ -79,7 +86,7 @@
       
       <section id="tweets-container">
 
-        <!-- new tweets will dynamically populate here -->
+        <!-- new tweets will dynamically populate here in DOM -->
 
       </section>
     </main>

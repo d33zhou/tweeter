@@ -2,6 +2,17 @@ section.new-tweet {
   display: flex;
   width: 100%;
   padding-top: 1em;
+  flex-direction: column;
+}
+
+section.new-tweet label.error {
+  display: flex;
+  border: solid medium red;
+  color: red;
+  font-size: smaller;
+  padding: 0.25em 0.5em;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .new-tweet form {
@@ -10,6 +21,7 @@ section.new-tweet {
   justify-content: flex-end;
   width: 100%;
   height: 125%;
+  padding-top: 1em;
 }
 
 .new-tweet textarea {
