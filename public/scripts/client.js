@@ -100,8 +100,8 @@ $(document).ready(function() {
 
     // display input form and add focus
     formTweet
-        .attr("showing", "Y")
-        .slideDown();
+      .attr("showing", "Y")
+      .slideDown();
       
     formTweet.find("output").val(140);
     formTweet.find("textarea").val("").focus();
