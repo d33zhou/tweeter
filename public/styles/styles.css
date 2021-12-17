@@ -138,6 +138,7 @@ nav .fa-angle-double-down {
 }
 #new-tweet #error-validation {
   padding: 0.25em 0.5em;
+  margin-bottom: 1em;
   font-size: smaller;
   color: red;
   border: solid medium red;

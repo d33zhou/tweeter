@@ -26,6 +26,7 @@ $theme-col: #4056A1;
   // error messages when inputs are not valid (none or >140 char)
   #error-validation {
     padding: 0.25em 0.5em;
+    margin-bottom: 1em;
     font-size: smaller;
     color: red;
     border: solid medium red;
