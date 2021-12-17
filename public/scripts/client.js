@@ -1,91 +1,89 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+// General event handlers after page load
 $(document).ready(function() {
 
-  $('#error-validation').hide(0);
-  $('#btn-scroll-top').hide(0);
-
-  $('section.new-tweet').hide(0, function() {
-    $(this).attr("showing", "N");
-  });
+  // hide error validation, scroll-to-top, and new tweet input form on initial load
+  $('#error-validation, #btn-scroll-top, section.new-tweet').hide(0);
 
   // handler when new tweets submitted
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
 
-    const currentEvent = this;
+    // hide error message if displayed
+    $('#error-validation').slideUp("fast");
 
-    // to fix async error msg switching
-    $('#error-validation').slideUp("fast"); //, function() {
+    // data validation for submitted tweet
+    const newTweet = $('#tweet-text');
+    const newTweetVal = newTweet.val();
+    let errorMsg = "";
 
-    // data validation for submitted tweet - no empty tweets or >140 char tweets
-    const newTweet = $('#tweet-text').val();
+    // no empty tweets or >140 char tweets, otherwise add error message
+    if (newTweetVal === "" || newTweetVal === null) {
+      errorMsg = "You didn't Tweet anything. Time to get creative!";
+    } else if (newTweetVal.length > 140) {
+      errorMsg = "You Tweeted too much! Try humming a shorter tune.";
+    }
 
-    if (newTweet === "" || newTweet === null) {
-      
+    // if error, check that previous error animation finished before pushing new error
+    if (errorMsg) {
       $('#error-validation').queue(function() {
-        $('span.error').html("You didn't Tweet anything. Time to get creative!");
-        $('#error-validation').slideDown("fast");  
-        $(this).dequeue();
-      });
-
-    } else if (newTweet.length > 140) {
-      
-      $('#error-validation').queue(function() {
-        $('span.error').html("You Tweeted too much! Try humming a shorter tune.");
+        $('span.error').html(errorMsg);
         $('#error-validation').slideDown("fast");
         $(this).dequeue();
       });
 
-    } else {
-      
-      // submit POST request with serialized data (query string format)
-      $.post("/tweets", $(currentEvent).serialize())
-        .done(function() {
-          
-          // add the newest tweet card to the top of the tweets container
-          $.get("/tweets", function(data) {
-            const recentTweet = data[data.length - 1];
-            const $newTweet = createTweetElement(recentTweet);
-            $('#tweets-container').prepend($newTweet);
-          });
-        });
-
-      // reformat tweeter text box and counter for next tweet
-      $('#tweet-text').val("").focus();
-      $('.counter').val(140);
-
+      // exit without POST request
+      return;
     }
-    //});
+      
+    // submit POST request with serialized data (query string format)
+    $.post("/tweets", $(this).serialize())
+      .done(function() {
+        
+        // when POST request complete, get & add the new tweet card to the top of the tweets container
+        $.get("/tweets", function(data) {
+          const recentTweet = data[data.length - 1];
+          const $newTweet = createTweetElement(recentTweet);
+          $('#tweets-container').prepend($newTweet);
+        });
+      });
+
+    // reformat tweeter text box and counter for next tweet
+    newTweet.val("").focus();
+    newTweet.parent().find("output").val(140);
   });
 
-  // display/hide the write tweet form
+  // display/hide the write tweet form when nav text clicked
   $('#nav-right-block span').click(function() {
     
-    if ($('section.new-tweet').attr("showing") === "N") {
-      $('section.new-tweet')
+    const formTweet = $('section.new-tweet');
+
+    // if form input hidden, show form, reset counter, and add focus
+    if (formTweet.attr("showing") === "N") {
+      formTweet
         .attr("showing", "Y")
         .slideDown();
       
-      $('#tweet-text').val("").focus();
+      formTweet.find("textarea").val("").focus();
 
+    // if form input showing, hide form
     } else {
-      $('section.new-tweet')
+      formTweet
         .attr("showing", "N")
         .slideUp();
+      
+      formTweet.find("output").val(140);
     }
   });
 
   // display/hide scroll-to-top button when scrolled down, hide/display nav tweet option
   $(window).scroll(function() {
 
+    // show scroll-to-top button when scrolled down more than 50px, hide nav tweet option
     if ($(this).scrollTop() > 50) {
       $('#btn-scroll-top').fadeIn("fast");
       $('#nav-right-block').fadeOut("fast");
+    
+    // vice versa
     } else {
       $('#btn-scroll-top').fadeOut("fast");
       $('#nav-right-block').fadeIn("fast");
@@ -94,22 +92,19 @@ $(document).ready(function() {
 
   // button click handling to scroll page back up to top
   $('#btn-scroll-top').click(function() {
+    const formTweet = $('section.new-tweet');
+    
     $('html, body').animate({scrollTop: 0}, 300);
 
-    $('section.new-tweet')
+    // display input form and add focus
+    formTweet
         .attr("showing", "Y")
         .slideDown();
       
-    $('#tweet-text').val("").focus();
+    formTweet.find("textarea").val("").focus();
   });
 
-  // GET all tweets data from server database and generate tweet cards
-  const loadTweets = function() {
-    $.get("/tweets", function(data) {
-      renderTweets(data);
-    });
-  };
-
+  // load all tweet cards and display on page
   loadTweets();
 });
 
@@ -140,15 +135,23 @@ const createTweetElement = function(tweet) {
 };
 
 // loop through each tweet data element, to generate each tweet for DOM
+// reverse order of tweets array, as newest tweets appended to end of db
 const renderTweets = function(tweets) {
-  for (let i = tweets.length - 1; i >= 0; i--) {
-    const $tweet = createTweetElement(tweets[i]);
+  for (const tweet of tweets.reverse()) {
+    const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
   }
 };
 
-// escape function to prevent cross-site scripting
-const escapeXSS = function (str) {
+// GET all tweets data from server database and generate tweet cards
+const loadTweets = function() {
+  $.get("/tweets", function(data) {
+    renderTweets(data);
+  });
+};
+
+// escape function to prevent cross-site scripting for user text
+const escapeXSS = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
