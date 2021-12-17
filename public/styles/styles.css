@@ -52,18 +52,6 @@ main #btn-scroll-top:hover {
   transform: scale(1.05);
 }
 
-@media only screen and (min-width: 1024px) {
-  body {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  main {
-    width: 50%;
-    margin-top: 8em;
-  }
-}
 html {
   box-sizing: border-box;
 }
@@ -121,14 +109,6 @@ nav .fa-angle-double-down {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-@media only screen and (min-width: 1024px) {
-  #profile {
-    width: 40%;
-    margin-top: 8em;
-    margin-left: 2em;
-    margin-right: 5em;
-  }
 }
 
 #new-tweet {
@@ -240,4 +220,25 @@ article div.icons {
 }
 article div.icons i:hover {
   color: darkgoldenrod;
+}
+
+@media only screen and (min-width: 1024px) {
+  #profile {
+    width: 40%;
+    margin-top: 8em;
+    margin-left: 2em;
+    margin-right: 5em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  main {
+    width: 50%;
+    margin-top: 8em;
+  }
 }

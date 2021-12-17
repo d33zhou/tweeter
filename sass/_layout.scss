@@ -87,19 +87,3 @@ main {
     }
   }
 }
-
-// RESPONSIVE DISPLAY, REDUCE CARD SIZE AND RIGHT-ALIGN
-@media only screen and (min-width: 1024px) {
-  // reflow content into twin columns, top-aligned
-  body {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  // resize tweet cards display
-  main {
-    width: 50%;
-    margin-top: 8em; // push below nav bar
-  }  
-}
