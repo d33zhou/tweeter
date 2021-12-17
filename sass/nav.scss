@@ -1,7 +1,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -16,6 +15,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
+
   position: fixed;
   top: 0;
   width: 100%;
@@ -23,13 +23,13 @@ nav {
 
 #nav-left-block {
   display: flex;
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   font-size: 150%;
 }
 
 #nav-right-block {
   display: flex;
-  font-family: "Source Sans Pro";
+  font-family: 'Source Sans Pro';
   flex-direction: column;
   align-items: center;
 }
@@ -43,10 +43,12 @@ nav {
   from {
     transform: translateY(0%);
   }
+
   to {
     transform: translateY(50%);
   }
 }
+
 .fa-angle-double-down {
   color: red;
   animation: arrow-updown 1s ease infinite alternate;

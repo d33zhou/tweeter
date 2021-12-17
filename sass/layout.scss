@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,24 +13,26 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 100%
 }
 
 nav {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main.container {
   display: flex;
   width: 90%;
@@ -58,7 +59,7 @@ main.container {
 }
 
 #btn-scroll-top:hover {
-  background-color: #ff6767;
+  background-color: rgb(255, 103, 103);
   transform: scale(1.05);
 }
 
@@ -72,5 +73,5 @@ main.container {
   main.container {
     margin-top: 120px;
     width: 50%;
-  }
+  }  
 }
