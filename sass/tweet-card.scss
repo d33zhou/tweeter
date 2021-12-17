@@ -1,0 +1,99 @@
+// Tweet Card Styling
+
+// ----------------------------
+// VARIABLES ------------------
+// ----------------------------
+
+$fonts: 'Source Sans Pro', sans-serif;
+$fonts-special: 'Bungee', sans-serif;
+$ft-color: #545149;
+
+$bg-color: #f4f1ec;
+$theme-col: #4056A1;
+
+// ----------------------------
+// FORMATTING -----------------
+// ----------------------------
+
+// Tweet cards
+article {
+  border: thick solid;
+  padding: 0.5em;
+
+  display: flex;
+  flex-direction: column;
+
+  // on hover, give shadow effect
+  &:hover {
+    box-shadow: 5px 5px rgb(184, 184, 184);
+  }
+
+  // formatting for tweeter profile (icon/name) and handle
+  header {
+    height: 2em;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // formatting for time and tweet icons
+  footer {
+    font-size: small;
+    font-weight: bold;
+    padding: 0em 1em;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  p {
+    // adjust tweeter profile icon size
+    img {
+      height: 1.5em;
+      width: 1.5em;
+      margin-left: 0.25em;
+    }
+    
+    // center-vertical align tweeter profile icon and name
+    &.pic-name {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    
+    // format tweeter user handle
+    &.handle {
+      font-weight: bold;
+      color: lightsteelblue;
+    }
+  }
+  
+  div {
+    // formatting for tweet card content
+    &.content {
+      padding: 0em 0.5em;
+      font-weight: 300;
+      border-bottom: thick solid;
+    }
+
+    // formatting for tweet icons (flag, retweet, like)
+    &.icons {
+      color: $theme-col;
+      font-size: medium;
+      gap: 0.5em;
+    
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    
+      // on hover, change icon colour (no functionality)
+      i:hover {
+        color: darkgoldenrod;
+      }
+    }
+  }
+}

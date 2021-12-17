@@ -1,4 +1,4 @@
-// New Tweets Input and Cards Styling
+// New Tweets Input
 
 // ----------------------------
 // VARIABLES ------------------
@@ -16,13 +16,14 @@ $theme-col: #4056A1;
 // ----------------------------
 
 // DEFAULTS
-section.new-tweet {
+#new-tweet {
   width: 100%;
-  padding-top: 1em;
+  // padding-top: 1em;
 
   display: flex;
   flex-direction: column;
 
+  // error messages when inputs are not valid (none or >140 char)
   #error-validation {
     padding: 0.25em 0.5em;
     font-size: smaller;
@@ -34,116 +35,59 @@ section.new-tweet {
     justify-content: space-between;
   }
 
+  // form for new tweets - stack text area, input box, counter
   form {
-    height: 125%;
+    height: 100%;
     width: 100%;
-    padding-top: 1em;
     
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
+  // input field for new tweets
   textarea {
-    font-weight: bold;
     resize: none;
-    background-color: #f4f1ec;
     border: none;
-    border-bottom-style: solid;
-    border-bottom-width: thick;
+    border-bottom: solid thick $ft-color;
     padding-bottom: 0.5em;
+
+    font-weight: bold;
+    background-color: #f4f1ec;
   }
 
+  // formatting for Tweet button and counter number
+  #new-tweet-btn-count {
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    font-family: $fonts-special;
+    
+    display: flex;
+    justify-content: space-between;
+  
+    // counter colouring - red for negatives, normal for positives
+    [sign="negative"] {
+      color: red;
+    }
+  
+    [sign="positive"] {
+      color: $ft-color;
+    }
+  }
+  
+  // Tweet button to submit new Tweets
   button {
-    color: #FFFFFF;
-    background-color: #4056A1;
     border: none;
     padding: 0.25em 0.5em;
 
+    color: white;
+    background-color: $theme-col;
+
+    // on hover, lighten colour and make button slightly larger, change cursor
     &:hover {
       background-color: #596aa0;
       cursor: pointer;
       transform: scale(1.05);
     }
   }
-
-
-}
-
-#new-tweet-btn-count {
-  padding-top: 0.5em;
-  padding-bottom: 1em;
-  font-family: 'Bungee', sans-serif;
-  
-  display: flex;
-  justify-content: space-between;
-
-  // counter colouring - red for negatives, normal for positives
-  [sign="negative"] {
-    color: red;
-  }
-
-  [sign="positive"] {
-    color: #545149;
-  }
-}
-
-article.tweet {
-  display: flex;
-  flex-direction: column;
-  border: thick solid;
-}
-
-article.tweet:hover {
-  box-shadow: 5px 5px rgb(184, 184, 184);
-}
-
-article.tweet header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0em 0.5em;
-}
-
-article.tweet div.content {
-  display: flex;
-  border-bottom: thick solid;
-  padding: 0em 1em;
-  font-weight: 300;
-}
-
-article.tweet footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: small;
-  font-weight: bold;
-  padding: 0em 2em;
-  padding-bottom: 1em;
-}
-
-div.icons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #4056A1;
-  font-size: medium;
-  gap: 0.5em;
-
-  
-}
-
-div.icons i:hover {
-  color: darkgoldenrod;
-}
-
-p.pic-name {
-  display: flex;
-  align-items: center;
-}
-
-p.handle {
-  font-weight: bold;
-  color: lightsteelblue;
 }

@@ -1,115 +1,53 @@
-section.new-tweet {
+#new-tweet {
   width: 100%;
-  padding-top: 1em;
   display: flex;
   flex-direction: column;
 }
-section.new-tweet #error-validation {
-  display: flex;
-  border: solid medium red;
-  color: red;
-  font-size: smaller;
+#new-tweet #error-validation {
   padding: 0.25em 0.5em;
+  font-size: smaller;
+  color: red;
+  border: solid medium red;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
-section.new-tweet form {
+#new-tweet form {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  height: 125%;
-  padding-top: 1em;
+  justify-content: flex-start;
 }
-section.new-tweet textarea {
-  font-weight: bold;
+#new-tweet textarea {
   resize: none;
-  background-color: #f4f1ec;
   border: none;
-  border-bottom-style: solid;
-  border-bottom-width: thick;
+  border-bottom: solid thick #545149;
   padding-bottom: 0.5em;
+  font-weight: bold;
+  background-color: #f4f1ec;
 }
-section.new-tweet button {
-  color: #FFFFFF;
-  background-color: #4056A1;
-  border: none;
-  padding: 0.25em 0.5em;
-}
-section.new-tweet button:hover {
-  background-color: #596aa0;
-  cursor: pointer;
-  transform: scale(1.05);
-}
-
-#new-tweet-btn-count {
+#new-tweet #new-tweet-btn-count {
+  padding-top: 0.5em;
+  padding-bottom: 1em;
   font-family: "Bungee", sans-serif;
   display: flex;
   justify-content: space-between;
-  padding-top: 0.5em;
-  padding-bottom: 1em;
 }
-#new-tweet-btn-count [sign=negative] {
+#new-tweet #new-tweet-btn-count [sign=negative] {
   color: red;
 }
-#new-tweet-btn-count [sign=positive] {
+#new-tweet #new-tweet-btn-count [sign=positive] {
   color: #545149;
 }
-
-article.tweet {
-  display: flex;
-  flex-direction: column;
-  border: thick solid;
+#new-tweet button {
+  border: none;
+  padding: 0.25em 0.5em;
+  color: white;
+  background-color: #4056A1;
 }
-
-article.tweet:hover {
-  box-shadow: 5px 5px #b8b8b8;
-}
-
-article.tweet header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0em 0.5em;
-}
-
-article.tweet div.content {
-  display: flex;
-  border-bottom: thick solid;
-  padding: 0em 1em;
-  font-weight: 300;
-}
-
-article.tweet footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: small;
-  font-weight: bold;
-  padding: 0em 2em;
-  padding-bottom: 1em;
-}
-
-div.icons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #4056A1;
-  font-size: medium;
-  gap: 0.5em;
-}
-
-div.icons i:hover {
-  color: darkgoldenrod;
-}
-
-p.pic-name {
-  display: flex;
-  align-items: center;
-}
-
-p.handle {
-  font-weight: bold;
-  color: lightsteelblue;
+#new-tweet button:hover {
+  background-color: #596aa0;
+  cursor: pointer;
+  transform: scale(1.05);
 }

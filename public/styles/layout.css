@@ -25,6 +25,7 @@ body {
 
 main {
   width: 90%;
+  margin-top: 2em;
   background-color: #f4f1ec;
   display: flex;
   flex-direction: column;
@@ -60,6 +61,6 @@ main #btn-scroll-top:hover {
 
   main {
     width: 50%;
-    margin-top: 120px;
+    margin-top: 8em;
   }
 }

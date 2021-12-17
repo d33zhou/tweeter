@@ -51,6 +51,7 @@ body {
 // MAIN CONTAINER - INPUT FORM AND TWEET CARDS
 main {
   width: 90%;
+  margin-top: 2em;
   background-color: #f4f1ec;
   
   display: flex;
@@ -99,6 +100,6 @@ main {
   // resize tweet cards display
   main {
     width: 50%;
-    margin-top: 120px; // push below nav bar
+    margin-top: 8em; // push below nav bar
   }  
 }

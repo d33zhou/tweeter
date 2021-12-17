@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
   // hide error validation, scroll-to-top, and new tweet input form on initial load
-  $('#error-validation, #btn-scroll-top, section.new-tweet').hide(0);
+  $('#error-validation, #btn-scroll-top, #new-tweet').hide(0);
 
   // handler when new tweets submitted
   $('#submit-tweet').submit(function(event) {
@@ -55,7 +55,7 @@ $(document).ready(function() {
   // display/hide the write tweet form when nav text clicked
   $('#nav-right-block span').click(function() {
     
-    const formTweet = $('section.new-tweet');
+    const formTweet = $('#new-tweet');
 
     // if form input hidden, show form, reset counter, and add focus
     if (formTweet.attr("showing") === "N") {
@@ -63,6 +63,7 @@ $(document).ready(function() {
         .attr("showing", "Y")
         .slideDown();
       
+      formTweet.find("output").val(140);
       formTweet.find("textarea").val("").focus();
 
     // if form input showing, hide form
@@ -70,8 +71,9 @@ $(document).ready(function() {
       formTweet
         .attr("showing", "N")
         .slideUp();
-      
-      formTweet.find("output").val(140);
+
+      // hide error message if displayed
+      $('#error-validation').slideUp("fast");
     }
   });
 
@@ -92,7 +94,7 @@ $(document).ready(function() {
 
   // button click handling to scroll page back up to top
   $('#btn-scroll-top').click(function() {
-    const formTweet = $('section.new-tweet');
+    const formTweet = $('#new-tweet');
     
     $('html, body').animate({scrollTop: 0}, 300);
 
@@ -101,6 +103,7 @@ $(document).ready(function() {
         .attr("showing", "Y")
         .slideDown();
       
+    formTweet.find("output").val(140);
     formTweet.find("textarea").val("").focus();
   });
 
