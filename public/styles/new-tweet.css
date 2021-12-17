@@ -104,6 +104,7 @@ div.icons {
   justify-content: space-between;
   color: #4056A1;
   font-size: medium;
+  gap: 0.5em;
 }
 
 div.icons i:hover {

@@ -13,5 +13,13 @@ header.profile {
 
 header h2 {
   display: flex;
+}
 
+@media only screen and (min-width: 1024px) {
+  header.profile {
+    width: 40%;
+    margin-right: 5em;
+    margin-left: 2em;
+    margin-top: 168px;
+  }
 }
