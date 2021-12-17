@@ -1,20 +1,23 @@
 // Profile Card Styling
 
-// profile icon and name
+// PROFILE ICON AND NAME
 #profile {
+  // position and size
   height: 400px;
   width: 100%;
   margin-top: 120px; // push below nav bar
 
+  // color/backdrop
   background-color: beige;
   background-image: url("/images/bg-fabric.png");
   
+  //flexboxing
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  // responsive display for desktop screens, left-align profile card and reduce size
+  // RESPONSIVE DISPLAY, REDUCE PROFILE SIZE AND LEFT-ALIGN
   @media only screen and (min-width: 1024px) {
     width: 40%;
 

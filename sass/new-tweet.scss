@@ -1,50 +1,71 @@
+// New Tweets Input and Cards Styling
+
+// ----------------------------
+// VARIABLES ------------------
+// ----------------------------
+
+$fonts: 'Source Sans Pro', sans-serif;
+$fonts-special: 'Bungee', sans-serif;
+$ft-color: #545149;
+
+$bg-color: #f4f1ec;
+$theme-col: #4056A1;
+
+// ----------------------------
+// FORMATTING -----------------
+// ----------------------------
+
+// DEFAULTS
 section.new-tweet {
-  display: flex;
   width: 100%;
   padding-top: 1em;
-  flex-direction: column;
-}
 
-section.new-tweet #error-validation {
-  display: flex;
-  border: solid medium red;
-  color: red;
-  font-size: smaller;
-  padding: 0.25em 0.5em;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.new-tweet form {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  height: 125%;
-  padding-top: 1em;
-}
 
-.new-tweet textarea {
-  font-weight: bold;
-  resize: none;
-  background-color: #f4f1ec;
-  border: none;
-  border-bottom-style: solid;
-  border-bottom-width: thick;
-  padding-bottom: 0.5em;
-}
+  #error-validation {
+    display: flex;
+    border: solid medium red;
+    color: red;
+    font-size: smaller;
+    padding: 0.25em 0.5em;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.new-tweet button {
-  color: #FFFFFF;
-  background-color: #4056A1;
-  border: none;
-  padding: 0.25em 0.5em;
-}
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 125%;
+    padding-top: 1em;
+  }
 
-.new-tweet button:hover {
-  background-color: #596aa0;
-  cursor: pointer;
-  transform: scale(1.05);
+  textarea {
+    font-weight: bold;
+    resize: none;
+    background-color: #f4f1ec;
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: thick;
+    padding-bottom: 0.5em;
+  }
+
+  button {
+    color: #FFFFFF;
+    background-color: #4056A1;
+    border: none;
+    padding: 0.25em 0.5em;
+
+    &:hover {
+      background-color: #596aa0;
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+
+
 }
 
 #new-tweet-btn-count {
@@ -53,14 +74,14 @@ section.new-tweet #error-validation {
   justify-content: space-between;
   padding-top: 0.5em;
   padding-bottom: 1em;
-}
 
-.new-tweet [sign="negative"] {
-  color: red;
-}
+  [sign="negative"] {
+    color: red;
+  }
 
-.new-tweet [sign="positive"] {
-  color: #545149;
+  [sign="positive"] {
+    color: #545149;
+  }
 }
 
 article.tweet {

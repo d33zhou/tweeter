@@ -23,29 +23,32 @@ $theme-col: #4056A1;
 // FORMATTING -----------------
 // ----------------------------
 
-// main navigation formatting
+// MAIN NAVIGATION
 nav {
+  // position and size
   position: fixed;
   top: 0;
   height: 120px;
   width: 100%;
   padding: 1em 1.5em;
   
+  // color
   color: white;
   background-color: $theme-col;
 
+  // flexboxing
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
 
-  // logo
+  // LOGO
   #nav-left-block {
     font-family: $fonts-special;
     font-size: 150%;
   }
 
-  // write a new tweet block
+  // NEW TWEET BLOCK
   #nav-right-block {    
     display: flex;
     flex-direction: column;
@@ -57,7 +60,7 @@ nav {
     }
   }
 
-  // slow bouncing arrows under write a new tweet
+  // ARROW SLOW BOUNCE ANIMATION
   .fa-angle-double-down {
     color: red;
     animation: arrow-updown 1s ease infinite alternate;
@@ -68,7 +71,7 @@ nav {
 // ANIMATIONS -----------------
 // ----------------------------
 
-// slow bouncing arrow under write a new tweet
+// ARROW SLOW BOUNCE ANIMATION
 @keyframes arrow-updown {
   from {
     transform: translateY(0%);

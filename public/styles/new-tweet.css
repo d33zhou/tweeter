@@ -1,10 +1,9 @@
 section.new-tweet {
-  display: flex;
   width: 100%;
   padding-top: 1em;
+  display: flex;
   flex-direction: column;
 }
-
 section.new-tweet #error-validation {
   display: flex;
   border: solid medium red;
@@ -14,8 +13,7 @@ section.new-tweet #error-validation {
   align-items: center;
   justify-content: space-between;
 }
-
-.new-tweet form {
+section.new-tweet form {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -23,8 +21,7 @@ section.new-tweet #error-validation {
   height: 125%;
   padding-top: 1em;
 }
-
-.new-tweet textarea {
+section.new-tweet textarea {
   font-weight: bold;
   resize: none;
   background-color: #f4f1ec;
@@ -33,15 +30,13 @@ section.new-tweet #error-validation {
   border-bottom-width: thick;
   padding-bottom: 0.5em;
 }
-
-.new-tweet button {
+section.new-tweet button {
   color: #FFFFFF;
   background-color: #4056A1;
   border: none;
   padding: 0.25em 0.5em;
 }
-
-.new-tweet button:hover {
+section.new-tweet button:hover {
   background-color: #596aa0;
   cursor: pointer;
   transform: scale(1.05);
@@ -54,12 +49,10 @@ section.new-tweet #error-validation {
   padding-top: 0.5em;
   padding-bottom: 1em;
 }
-
-.new-tweet [sign=negative] {
+#new-tweet-btn-count [sign=negative] {
   color: red;
 }
-
-.new-tweet [sign=positive] {
+#new-tweet-btn-count [sign=positive] {
   color: #545149;
 }
 

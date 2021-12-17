@@ -33,61 +33,72 @@ $theme-col: #4056A1;
 // FORMATTING -----------------
 // ----------------------------
 
-// full page defaults
+// DEFAULTS
 body {
+  height: 100%;
+  width: 100%;
+  
   font-family: $fonts;
   font-size: 24px;
   color: $ft-color;
   background-color: $bg-color;
   
-  height: 100%;
-  width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
-main.container {
-  display: flex;
+// MAIN CONTAINER - INPUT FORM AND TWEET CARDS
+main {
   width: 90%;
   background-color: #f4f1ec;
+  
+  display: flex;
   flex-direction: column;
   justify-content: center;
+
+  // SCROLL TO TOP BUTTON
+  #btn-scroll-top {
+    // position and size
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 50%;
+    padding: 0.5em;
+
+    // color and border
+    color: white;
+    background-color: red;
+    border: none;
+
+    // flexboxing
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // ON HOVER
+    &:hover {
+      background-color: rgb(255, 103, 103);
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
 }
 
-#btn-scroll-top {
-  display: flex;
-  color: white;
-  background-color: red;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 0.5em;
-  height: 2.5em;
-  width: 2.5em;
-  justify-content: center;
-  align-items: center;
-  border: none;
-}
-
-#btn-scroll-top:hover {
-  background-color: rgb(255, 103, 103);
-  transform: scale(1.05);
-}
-
+// RESPONSIVE DISPLAY, REDUCE CARD SIZE AND RIGHT-ALIGN
 @media only screen and (min-width: 1024px) {
+  // reflow content into twin columns, top-aligned
   body {
     flex-direction: row;
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: flex-start;
   }
 
-  main.container {
-    margin-top: 120px;
+  // resize tweet cards display
+  main {
     width: 50%;
+    margin-top: 120px; // push below nav bar
   }  
 }
