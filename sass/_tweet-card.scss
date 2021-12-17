@@ -51,6 +51,8 @@ article {
   }
 
   p {
+    word-break: break-all;
+    
     // adjust tweeter profile icon size
     img {
       height: 1.5em;

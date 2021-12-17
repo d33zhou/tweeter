@@ -191,6 +191,9 @@ article footer {
   justify-content: space-between;
   align-items: center;
 }
+article p {
+  word-break: break-all;
+}
 article p img {
   height: 1.5em;
   width: 1.5em;
