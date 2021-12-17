@@ -1,6 +1,9 @@
-// Navigation bar styling
+// Navigation Bar Styling
 
-// set default content sizing to border-box
+// ----------------------------
+// GLOBAL ---------------------
+// ----------------------------
+
 html {
   box-sizing: border-box;
 }
@@ -9,41 +12,63 @@ html {
   box-sizing: inherit;
 }
 
+// ----------------------------
+// VARIABLES ------------------
+// ----------------------------
 
+$fonts-special: 'Bungee', sans-serif;
+$theme-col: #4056A1;
+
+// ----------------------------
+// FORMATTING -----------------
+// ----------------------------
+
+// main navigation formatting
 nav {
-  display: flex;
-  color: #FFFFFF;
-  background-color: #4056A1;
+  position: fixed;
+  top: 0;
   height: 120px;
   width: 100%;
   padding: 1em 1.5em;
+  
+  color: white;
+  background-color: $theme-col;
+
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
 
-  position: fixed;
-  top: 0;
-  width: 100%;
+  // logo
+  #nav-left-block {
+    font-family: $fonts-special;
+    font-size: 150%;
+  }
+
+  // write a new tweet block
+  #nav-right-block {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  }
+
+  // slow bouncing arrows under write a new tweet
+  .fa-angle-double-down {
+    color: red;
+    animation: arrow-updown 1s ease infinite alternate;
+  }
 }
 
-#nav-left-block {
-  display: flex;
-  font-family: 'Bungee', sans-serif;
-  font-size: 150%;
-}
+// ----------------------------
+// ANIMATIONS -----------------
+// ----------------------------
 
-#nav-right-block {
-  display: flex;
-  font-family: 'Source Sans Pro';
-  flex-direction: column;
-  align-items: center;
-}
-
-#nav-right-block span:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
+// slow bouncing arrow under write a new tweet
 @keyframes arrow-updown {
   from {
     transform: translateY(0%);
@@ -52,9 +77,4 @@ nav {
   to {
     transform: translateY(50%);
   }
-}
-
-.fa-angle-double-down {
-  color: red;
-  animation: arrow-updown 1s ease infinite alternate;
 }

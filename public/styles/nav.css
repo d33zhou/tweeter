@@ -7,36 +7,34 @@ html {
 }
 
 nav {
-  display: flex;
-  color: #FFFFFF;
-  background-color: #4056A1;
+  position: fixed;
+  top: 0;
   height: 120px;
   width: 100%;
   padding: 1em 1.5em;
+  color: white;
+  background-color: #4056A1;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
-
-#nav-left-block {
-  display: flex;
+nav #nav-left-block {
   font-family: "Bungee", sans-serif;
   font-size: 150%;
 }
-
-#nav-right-block {
+nav #nav-right-block {
   display: flex;
-  font-family: "Source Sans Pro";
   flex-direction: column;
   align-items: center;
 }
-
-#nav-right-block span:hover {
+nav #nav-right-block span:hover {
   transform: scale(1.05);
   cursor: pointer;
+}
+nav .fa-angle-double-down {
+  color: red;
+  animation: arrow-updown 1s ease infinite alternate;
 }
 
 @keyframes arrow-updown {
@@ -46,8 +44,4 @@ nav {
   to {
     transform: translateY(50%);
   }
-}
-.fa-angle-double-down {
-  color: red;
-  animation: arrow-updown 1s ease infinite alternate;
 }
