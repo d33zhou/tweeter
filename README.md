@@ -1,5 +1,7 @@
 # Tweeter Project
 
+![](https://img.shields.io/badge/version-v1.0-blue?style=flat&logo=github)
+
 Tweeter is a simple, single-page Twitter clone.
 
 Users can Tweet what's on their mind and their Tweets will populate as a new card for everyone to see. This project is a front-end focused project utilizing HTML, CSS/SCSS, JavaScript, jQuery, and AJAX, with some additional back-end integration via Node.js and Express.
