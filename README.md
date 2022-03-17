@@ -10,9 +10,9 @@ Additional features of the project include CSS animations, a responsive layout f
 
 ## Screenshots
 
-!["Screeshot of Tweeter mobile view"](https://github.com/d33zhou/tweeter/blob/master/docs/mobile-view.png?raw=true)
+!["Screenshot of Tweeter mobile view"](https://github.com/d33zhou/tweeter/blob/master/docs/mobile-view.png?raw=true)
 
-!["Screeshot of Tweeter desktop view"](https://github.com/d33zhou/tweeter/blob/master/docs/desktop-view.png?raw=true)
+!["Screenshot of Tweeter desktop view"](https://github.com/d33zhou/tweeter/blob/master/docs/desktop-view.png?raw=true)
 
 ## Getting Started
 
